@@ -3,8 +3,8 @@
 	var defaults = {
     	fixedHeight: 500,
     	fixedWidth: 500,
-    	dropPinPath: '/js/dropPin/',
-        pin: '/js/dropPin/defaultpin.png',
+    	dropPinPath: 'dropPin/',
+        pin: 'dropPin/defaultpin.png',
         backgroundImage: '',
         backgroundColor: '#9999CC',
         xoffset : 10,
@@ -35,8 +35,8 @@
 	            var x = ev.pageX - offset.left;
 	            var y = ev.pageY - offset.top;
 	        	
-	        	
-	            $('.pin').remove();            
+	        	//console.log(this);
+	            $(this).children('.pin').remove();            
 				
 		        var xval = (x - options.xoffset);
 		        var yval = (y - options.yoffset);
