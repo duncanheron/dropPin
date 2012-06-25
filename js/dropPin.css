@@ -1,0 +1,11 @@
+#map {	
+    position: relative;    
+}
+#map img#mapclick{
+	position: absolute;	
+	z-index:5555;	
+}
+.pin {
+	position: absolute;	
+	z-index:2;
+}
