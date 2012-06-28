@@ -1,25 +1,17 @@
 <?php 
 
-renderInfoMap();
-
-function renderInfoMap()
-{
-	global $db;
-	
-	
 	$mapItems = array(
-						array("id" => 1, "title" => "map pin 1", "xcoord" => "420","ycoord" => "120"),
-						array("id" => 2, "title" => "map pin 2", "xcoord" => "429","ycoord" => "129")
-
-					 );
+			array("id" => 1, "title" => "map pin 1", "xcoord" => "420","ycoord" => "120"),
+			array("id" => 2, "title" => "map pin 2", "xcoord" => "429","ycoord" => "129")
+			);
 	foreach($mapItems as $map)
 	{
 		$mapPins[] = array(
-					"id" => $map['id'],
-					"title" => $map['title'],					
-					"xcoord" => $map['xcoord'],
-					"ycoord" => $map['ycoord']
-					);
+				"id" => $map['id'],
+				"title" => $map['title'],					
+				"xcoord" => $map['xcoord'],
+				"ycoord" => $map['ycoord']
+				);
 	}
 
 	?>
@@ -27,24 +19,24 @@ function renderInfoMap()
 	<link rel="stylesheet" href="dropPin/dropPin.css" type="text/css" />
 	<script type="text/javascript" src="dropPin/dropPin.js"></script>	
 	<script type="text/javascript">
-				$(document).ready(function() {
-					
-			        $('#map').placePin2({
-					  	fixedHeight:495,
-					  	fixedWidth:700,
-					  	cursor: 'pointer',
-					  	pinclass: 'qtipinfo',
-					  	pinDataSet: <?php echo '{"markers": '.json_encode($mapPins).'}' ;?>
-					});
+	$(document).ready(function() {
+		
+        $('#map').dropPin('showPins2',{
+		  	fixedHeight:495,
+		  	fixedWidth:700,
+		  	cursor: 'pointer',
+		  	pinclass: 'qtipinfo',
+		  	pinDataSet: <?php echo '{"markers": '.json_encode($mapPins).'}' ;?>
+	});
 
-					$('#map2').dropPin({
-					  	fixedHeight:495,
-					  	fixedWidth:700,
-					  	cursor: 'crosshair',
-					  	pinclass: 'qtipinfo'					  	
-					});
-					
-				});
+	$('#map2').dropPin({
+		  	fixedHeight:495,
+		  	fixedWidth:700,
+		  	cursor: 'crosshair',
+		  	pinclass: 'qtipinfo'					  	
+	});
+		
+	});
 	</script>
 	<p>Display pins on a map</p>
 	<div id="map"></div><br />
