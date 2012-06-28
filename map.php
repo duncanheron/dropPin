@@ -1,5 +1,4 @@
 <?php 
-
 	$mapItems = array(
 			array("id" => 1, "title" => "map pin 1", "xcoord" => "420","ycoord" => "120"),
 			array("id" => 2, "title" => "map pin 2", "xcoord" => "429","ycoord" => "129")
@@ -42,6 +41,3 @@
 	<div id="map"></div><br />
 	<p>Drop a pin on a map</p>
 	<div id="map2"></div>
-	<?php	
-}
-?>
