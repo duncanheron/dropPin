@@ -26,18 +26,17 @@
                  
             var options =  $.extend(defaults, options);
  			
- 			$(this).css({'cursor' : options.cursor, 'background-color' : options.backgroundColor , 'background-image' : "url('"+options.backgroundImage+"')",'height' : options.fixedHeight , 'width' : options.fixedWidth});
+ 		$(this).css({'cursor' : options.cursor, 'background-color' : options.backgroundColor , 'background-image' : "url('"+options.backgroundImage+"')",'height' : options.fixedHeight , 'width' : options.fixedWidth});
  			
- 			$(this).bind(options.userevent, function (ev) {
+ 		$(this).on(options.userevent, function (ev) {
 	            
-	          	var $img = $(ev.target);
-	            var offset = $img.offset();
-	            var x = ev.pageX - offset.left;
-	            var y = ev.pageY - offset.top;
-	        	
-	        	//console.log(this);
-	            $(this).children('.pin').remove();            
-				
+		        var $img = $(ev.target);
+		        var offset = $img.offset();
+		        var x = ev.pageX - offset.left;
+		        var y = ev.pageY - offset.top;
+		        	
+		        $(this).children('.pin').remove();            
+					
 		        var xval = (x - options.xoffset);
 		        var yval = (y - options.yoffset);
 		        var imgC = $('<img class="pin">');
@@ -57,7 +56,7 @@
                  
             var options =  $.extend(defaults, options);
  			
- 			$(this).css({'cursor' : options.cursor, 'background-color' : options.backgroundColor , 'background-image' : "url('"+options.backgroundImage+"')",'height' : options.fixedHeight , 'width' : options.fixedWidth});
+ 		$(this).css({'cursor' : options.cursor, 'background-color' : options.backgroundColor , 'background-image' : "url('"+options.backgroundImage+"')",'height' : options.fixedHeight , 'width' : options.fixedWidth});
  			
 	        var xval = (options.pinX);
 	        var yval = (options.pinY);
@@ -74,20 +73,20 @@
         },
         placePin2: function(options) {           
                  
-            var options =  $.extend(defaults, options);
+           	var options =  $.extend(defaults, options);
  			
- 			$(this).css({'cursor' : options.cursor, 'background-color' : options.backgroundColor , 'background-image' : "url('"+options.backgroundImage+"')",'height' : options.fixedHeight , 'width' : options.fixedWidth});
- 			
- 			for(var i=0; i < (options.pinDataSet).markers.length; i++)
- 			{
- 				var dataPin = options.pinDataSet.markers[i];
- 				 				 
+	 	$(this).css({'cursor' : options.cursor, 'background-color' : options.backgroundColor , 'background-image' : "url('"+options.backgroundImage+"')",'height' : options.fixedHeight , 'width' : options.fixedWidth});
+	 	
+	 	for(var i=0; i < (options.pinDataSet).markers.length; i++)
+	 	{
+		 	var dataPin = options.pinDataSet.markers[i];
+		 		 				 
 		        var imgC = $('<img rel="/map-content.php?id='+dataPin.id+'" class="pin '+options.pinclass+'" style="top:'+dataPin.ycoord+'px;left:'+dataPin.xcoord+'px;">');
 		        imgC.attr('src',  options.pin);	
 		        imgC.attr('title',  dataPin.title);
 		        
 		        imgC.appendTo(this);
- 			}
+	 	}
  				    
         }
         
