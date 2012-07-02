@@ -5,24 +5,24 @@ A quick and simple tool to drop markers onto static images avoiding the use of a
 <div id="map"></div>
 
 ### Basic use - dropping a pin
-$('#map').dropPin({
-    fixedHeight:495,
-    fixedWidth:700
-});
+    $('#map').dropPin({
+        fixedHeight:495,
+        fixedWidth:700
+    });
 ### Displaying already dropped pins
     $mapItems = array(
-	array(
-		"id" => 1,
-		"title" => "map pin 1",
-		"xcoord" => "420",
-		"ycoord" => "120"
-	),
-	array(
-		"id" => 2,
-		"title" => "map pin 2",
-		"xcoord" => "429",
-		"ycoord" => "129"
-	)
+        array(
+            "id" => 1,
+            "title" => "map pin 1",
+            "xcoord" => "420",
+            "ycoord" => "120"
+            ),
+        array(
+            "id" => 2,
+            "title" => "map pin 2",
+            "xcoord" => "429",
+            "ycoord" => "129"
+            )
     );
     foreach($mapItems as $map)
     {
