@@ -1,3 +1,8 @@
+/*!
+* dropPin - because image maps are icky
+* http://duncanheron.github.com/dropPin/
+* 
+*/
 (function( $ ){
 
 	$.fn.dropPin = function(method) {
