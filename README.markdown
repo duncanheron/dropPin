@@ -6,11 +6,11 @@ A quick and simple tool to drop markers onto static images avoiding the use of a
 
 ### Basic use - dropping a pin
 $('#map').dropPin({
-	fixedHeight:495,
-	fixedWidth:700
+    fixedHeight:495,
+    fixedWidth:700
 });
 ### Displaying already dropped pins
-$mapItems = array(
+    $mapItems = array(
 	array(
 		"id" => 1,
 		"title" => "map pin 1",
@@ -23,23 +23,23 @@ $mapItems = array(
 		"xcoord" => "429",
 		"ycoord" => "129"
 	)
-);
-foreach($mapItems as $map)
-{
-	$mapPins[] = array(
-		"id" => $map['id'],
-		"title" => $map['title'],					
-		"xcoord" => $map['xcoord'],
-		"ycoord" => $map['ycoord']
-	);
-}
-$('#map').dropPin('showPins2',{
-	fixedHeight:495,
-	fixedWidth:700,
-	cursor: 'pointer',
-	pinclass: 'qtipinfo',
-	pinDataSet: <?php echo '{"markers": '.json_encode($mapPins).'}' ;?>
-});
+    );
+    foreach($mapItems as $map)
+    {
+        $mapPins[] = array(
+        "id" => $map['id'],
+        "title" => $map['title'],					
+        "xcoord" => $map['xcoord'],
+        "ycoord" => $map['ycoord']
+        );
+    }
+    $('#map').dropPin('showPins2',{
+        fixedHeight:495,
+        fixedWidth:700,
+        cursor: 'pointer',
+        pinclass: 'qtipinfo',
+        pinDataSet: <?php echo '{"markers": '.json_encode($mapPins).'}' ;?>
+    });
 
 ### Options
     fixedHeight: 500,
