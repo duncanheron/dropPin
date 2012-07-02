@@ -60,7 +60,7 @@
 			});				
 		
 		},
-		showPins: function(options) {           
+		showPin: function(options) {           
 		
 			var options =  $.extend(defaults, options);
 			
@@ -79,7 +79,7 @@
 			$(options.hiddenYid).val(yval);	
 		
 		},
-		showPins2: function(options) {           
+		showPins: function(options) {           
 		
 			var options =  $.extend(defaults, options);
 			

@@ -20,7 +20,7 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 		
-        $('#map').dropPin('showPins2',{
+        $('#map').dropPin('showPins',{
 		  	fixedHeight:495,
 		  	fixedWidth:700,
 		  	cursor: 'pointer',
@@ -40,8 +40,7 @@
 	<p>Display pins on a map</p>
 	<div id="map"></div><br />
 	<p>Drop a pin on a map</p>
-<<<<<<< HEAD
+
 	<div id="map2"></div>
-=======
+
 	<div id="map2"></div>
->>>>>>> f10b191822b0f9bb717715a124ca658fc65436ea

@@ -43,7 +43,7 @@ A quick and simple tool to drop markers onto static images avoiding the use of a
     <script type="text/javascript">
         $(document).ready(function() {
 		
-            $('#map').dropPin('showPins2',{
+            $('#map').dropPin('showPin',{
                 fixedHeight:495,
                 fixedWidth:700,
                 backgroundImage: '/images/{some-image.jpg}',
@@ -94,7 +94,7 @@ A quick and simple tool to drop markers onto static images avoiding the use of a
     <script type="text/javascript">
         $(document).ready(function() {
 		
-            $('#map').dropPin('showPins2',{
+            $('#map').dropPin('showPins',{
                 fixedHeight:495,
                 fixedWidth:700,
                 cursor: 'pointer',
