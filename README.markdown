@@ -1,4 +1,4 @@
-### dropPin v1
+### dropPin
 A quick and simple tool to drop markers onto static images avoiding the use of annoying area maps.
 
 ### HTML
@@ -9,7 +9,62 @@ A quick and simple tool to drop markers onto static images avoiding the use of a
         fixedHeight:495,
         fixedWidth:700
     });
-### Displaying already dropped pins
+
+### Example 1 - click to add a pin
+    #include the js and css files
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script></script>
+    <link rel="stylesheet" href="/js/dropPin/dropPin.css" type="text/css" />
+    <script type="text/javascript" src="/js/dropPin/dropPin.js"></script>
+    
+    #add the script on document ready
+    <script type="text/javascript">
+    	$(document).ready(function() {
+		
+            $('#map').dropPin({
+                fixedHeight:495,
+                fixedWidth:700,
+                backgroundImage: '/images/{some-image.jpg}',
+                pin: '/image/{custom-pin-graphic.png}'
+            });
+        });
+	  
+    </script>
+    
+    #add the html div to insert the image map
+    <div id="map"></div>
+    
+### Example 2 - show a single stored pin
+    #include the js and css files
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script></script>
+    <link rel="stylesheet" href="/js/dropPin/dropPin.css" type="text/css" />
+    <script type="text/javascript" src="/js/dropPin/dropPin.js"></script>
+    
+    #add the script on document ready
+    <script type="text/javascript">
+        $(document).ready(function() {
+		
+            $('#map').dropPin('showPins2',{
+                fixedHeight:495,
+                fixedWidth:700,
+                backgroundImage: '/images/{some-image.jpg}',
+                pin: '/image/{custom-pin-graphic.png}'
+                pinX: <?php echo {pinXcoord} ?>,
+                pinY: <?php echo {pinYcoord} ?>
+                });
+        });
+	  
+    </script>
+    
+    #add the html div to insert the image map
+    <div id="map"></div>
+    
+### Example 3 - show multiple pins from dataset
+    #include the js and css files
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script></script>
+    <link rel="stylesheet" href="/js/dropPin/dropPin.css" type="text/css" />
+    <script type="text/javascript" src="/js/dropPin/dropPin.js"></script>
+    
+    #get the data for the pins(maybe from a database?)
     $mapItems = array(
         array(
             "id" => 1,
@@ -24,22 +79,34 @@ A quick and simple tool to drop markers onto static images avoiding the use of a
             "ycoord" => "129"
             )
     );
+    #set up an array of pin data for plugin use
     foreach($mapItems as $map)
     {
         $mapPins[] = array(
         "id" => $map['id'],
-        "title" => $map['title'],					
+        "title" => $map['title'],    				
         "xcoord" => $map['xcoord'],
         "ycoord" => $map['ycoord']
         );
     }
-    $('#map').dropPin('showPins2',{
-        fixedHeight:495,
-        fixedWidth:700,
-        cursor: 'pointer',
-        pinclass: 'qtipinfo',
-        pinDataSet: <?php echo '{"markers": '.json_encode($mapPins).'}' ;?>
-    });
+    
+    #add the script on document ready and pass through the pin dataset
+    <script type="text/javascript">
+        $(document).ready(function() {
+		
+            $('#map').dropPin('showPins2',{
+                fixedHeight:495,
+                fixedWidth:700,
+                cursor: 'pointer',
+                pinclass: 'qtipinfo',
+                pinDataSet: <?php echo '{"markers": '.json_encode($mapPins).'}' ;?>
+            });
+        });
+	  
+    </script>
+    
+    #add the html div to insert the image map
+    <div id="map"></div>
 
 ### Options
     fixedHeight: 500,
@@ -58,5 +125,6 @@ A quick and simple tool to drop markers onto static images avoiding the use of a
     pinX: false, //set to value if you pass pin co-ords to overirde click binding to position
     pinY: false, //set to value if you pass pin co-ords to overirde click binding to position
     pinDataSet: '' //array of pin coordinates for front end render
-### Authors and Contributors
+
+### Author
 Duncan Heron
