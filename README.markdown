@@ -6,11 +6,12 @@ A quick and simple tool to drop markers onto static images avoiding the use of a
 <div id="map"></div>
 ```
 ### Basic use - dropping a pin - default user event is .on click
+```
     $('#map').dropPin({
         fixedHeight:495,
         fixedWidth:700
     });
-
+```
 ### Example 1 - click to add a pin
     #include the js and css files
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script></script>
