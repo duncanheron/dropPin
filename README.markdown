@@ -14,7 +14,7 @@ $('#map').dropPin({
 ```
 
 ### Example 1 - click to add a pin
-```javascript
+```html
 #include the js and css files
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script>
 <link rel="stylesheet" href="/js/dropPin/dropPin.css" type="text/css" />
@@ -39,7 +39,7 @@ $('#map').dropPin({
 ```  
 
 ### Example 2 - show a single stored pin
-```javascript
+```html
 #include the js and css files
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script>
 <link rel="stylesheet" href="/js/dropPin/dropPin.css" type="text/css" />
