@@ -16,7 +16,7 @@ $('#map').dropPin({
 ### Example 1 - click to add a pin
 ```javascript
 #include the js and css files
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script>
 <link rel="stylesheet" href="/js/dropPin/dropPin.css" type="text/css" />
 <script type="text/javascript" src="/js/dropPin/dropPin.js"></script>
 
@@ -41,7 +41,7 @@ $('#map').dropPin({
 ### Example 2 - show a single stored pin
 ```javascript
 #include the js and css files
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script>
 <link rel="stylesheet" href="/js/dropPin/dropPin.css" type="text/css" />
 <script type="text/javascript" src="/js/dropPin/dropPin.js"></script>
 
@@ -68,7 +68,7 @@ $(document).ready(function() {
 ### Example 3 - show multiple pins from dataset
 ```javascript
 #include the js and css files
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script>
 <link rel="stylesheet" href="/js/dropPin/dropPin.css" type="text/css" />
 <script type="text/javascript" src="/js/dropPin/dropPin.js"></script>
 
