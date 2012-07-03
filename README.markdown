@@ -6,15 +6,15 @@ A quick and simple tool to drop markers onto static images avoiding the use of a
 <div id="map"></div>
 ```
 ### Basic use - dropping a pin - default user event is .on click
-```
+```javascript
 $('#map').dropPin({
-fixedHeight:495,
-fixedWidth:700
+    fixedHeight:495,
+    fixedWidth:700
 });
 ```
 
 ### Example 1 - click to add a pin
-```
+```javascript
 #include the js and css files
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script></script>
 <link rel="stylesheet" href="/js/dropPin/dropPin.css" type="text/css" />
@@ -39,7 +39,7 @@ fixedWidth:700
 ```  
 
 ### Example 2 - show a single stored pin
-```
+```javascript
 #include the js and css files
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script></script>
 <link rel="stylesheet" href="/js/dropPin/dropPin.css" type="text/css" />
@@ -66,7 +66,7 @@ $(document).ready(function() {
 ```
 
 ### Example 3 - show multiple pins from dataset
-```
+```javascript
 #include the js and css files
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script></script>
 <link rel="stylesheet" href="/js/dropPin/dropPin.css" type="text/css" />
@@ -90,12 +90,12 @@ array(
 #set up an array of pin data for plugin use
 foreach($mapItems as $map)
 {
-$mapPins[] = array(
-"id" => $map['id'],
-"title" => $map['title'],    				
-"xcoord" => $map['xcoord'],
-"ycoord" => $map['ycoord']
-);
+    $mapPins[] = array(
+        "id" => $map['id'],
+        "title" => $map['title'],    				
+        "xcoord" => $map['xcoord'],
+        "ycoord" => $map['ycoord']
+    );
 }
 
 #add the script on document ready and pass through the pin dataset
@@ -116,8 +116,8 @@ $(document).ready(function() {
 #add the html div to insert the image map
 <div id="map"></div>
 ```
-```
 ### Options
+```javascript
 fixedHeight: 500,
 fixedWidth: 500,
 dropPinPath: '/js/dropPin/',
