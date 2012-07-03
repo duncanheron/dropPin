@@ -2,7 +2,7 @@
 A quick and simple tool to drop markers onto static images avoiding the use of annoying area maps.
 
 ### HTML
-```
+```html
 <div id="map"></div>
 ```
 ### Basic use - dropping a pin - default user event is .on click
