@@ -66,37 +66,41 @@ $(document).ready(function() {
 ```
 
 ### Example 3 - show multiple pins from dataset
-```javascript
+```html
 #include the js and css files
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script>
 <link rel="stylesheet" href="/js/dropPin/dropPin.css" type="text/css" />
 <script type="text/javascript" src="/js/dropPin/dropPin.js"></script>
 
 #get the data for the pins(maybe from a database?)
-$mapItems = array(
-array(
-    "id" => 1,
-    "title" => "map pin 1",
-    "xcoord" => "420",
-    "ycoord" => "120"
-    ),
-array(
-    "id" => 2,
-    "title" => "map pin 2",
-    "xcoord" => "429",
-    "ycoord" => "129"
-    )
-);
-#set up an array of pin data for plugin use
-foreach($mapItems as $map)
-{
-    $mapPins[] = array(
-        "id" => $map['id'],
-        "title" => $map['title'],    				
-        "xcoord" => $map['xcoord'],
-        "ycoord" => $map['ycoord']
+<?php
+    $mapItems = array(
+    array(
+        "id" => 1,
+        "title" => "map pin 1",
+        "xcoord" => "420",
+        "ycoord" => "120"
+        ),
+    array(
+        "id" => 2,
+        "title" => "map pin 2",
+        "xcoord" => "429",
+        "ycoord" => "129"
+        )
     );
-}
+?>
+#set up an array of pin data for plugin use
+<?php
+    foreach($mapItems as $map)
+    {
+        $mapPins[] = array(
+            "id" => $map['id'],
+            "title" => $map['title'],    				
+            "xcoord" => $map['xcoord'],
+            "ycoord" => $map['ycoord']
+        );
+    }
+?>
 
 #add the script on document ready and pass through the pin dataset
 <script type="text/javascript">
