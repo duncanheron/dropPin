@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>dropPin by duncanheron</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/duncanheron/dropPin">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/duncanheron/dropPin/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/duncanheron/dropPin/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>dropPin</h1>
+          <p>drop markers onto static images with jQuery</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/duncanheron">duncanheron</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h3>dropPin</h3>
+
+<p>A quick and simple tool to drop markers onto static images avoiding the use of annoying area maps.</p>
+
+<h3>HTML</h3>
+
+<div class="highlight">
+<pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"map"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre>
+</div>
+
+
+<h3>Basic use - dropping a pin - default user event is .on click</h3>
+
+<div class="highlight">
+<pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#map'</span><span class="p">).</span><span class="nx">dropPin</span><span class="p">({</span>
+    <span class="nx">fixedHeight</span><span class="o">:</span><span class="mi">495</span><span class="p">,</span>
+    <span class="nx">fixedWidth</span><span class="o">:</span><span class="mi">700</span>
+<span class="p">});</span>
+</pre>
+</div>
+
+
+<h3>Example 1 - click to add a pin</h3>
+
+<div class="highlight">
+<pre>#include the js and css files
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"</span> <span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/js/dropPin/dropPin.css"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"/js/dropPin/dropPin.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+#add the script on document ready
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'#map'</span><span class="p">).</span><span class="nx">dropPin</span><span class="p">({</span>
+        <span class="nx">fixedHeight</span><span class="o">:</span><span class="mi">495</span><span class="p">,</span>
+        <span class="nx">fixedWidth</span><span class="o">:</span><span class="mi">700</span><span class="p">,</span>
+        <span class="nx">backgroundImage</span><span class="o">:</span> <span class="s1">'/images/{some-image.jpg}'</span><span class="p">,</span>
+        <span class="nx">pin</span><span class="o">:</span> <span class="s1">'/image/{custom-pin-graphic.png}'</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nt">&lt;/script&gt;</span>
+
+#add the html div to insert the image map
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"map"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre>
+</div>
+
+
+<h3>Example 2 - show a single stored pin</h3>
+
+<div class="highlight">
+<pre>#include the js and css files
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"</span> <span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/js/dropPin/dropPin.css"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"/js/dropPin/dropPin.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+#add the script on document ready
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'#map'</span><span class="p">).</span><span class="nx">dropPin</span><span class="p">(</span><span class="s1">'showPin'</span><span class="p">,{</span>
+        <span class="nx">fixedHeight</span><span class="o">:</span><span class="mi">495</span><span class="p">,</span>
+        <span class="nx">fixedWidth</span><span class="o">:</span><span class="mi">700</span><span class="p">,</span>
+        <span class="nx">backgroundImage</span><span class="o">:</span> <span class="s1">'/images/{some-image.jpg}'</span><span class="p">,</span>
+        <span class="nx">pin</span><span class="o">:</span> <span class="s1">'/image/{custom-pin-graphic.png}'</span>
+        <span class="nx">pinX</span><span class="o">:</span> <span class="o">&lt;?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="p">{</span><span class="nx">pinXcoord</span><span class="p">}</span> <span class="o">?&gt;</span><span class="p">,</span>
+        <span class="nx">pinY</span><span class="o">:</span> <span class="o">&lt;?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="p">{</span><span class="nx">pinYcoord</span><span class="p">}</span> <span class="o">?&gt;</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nt">&lt;/script&gt;</span>
+
+#add the html div to insert the image map
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"map"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre>
+</div>
+
+
+<h3>Example 3 - show multiple pins from dataset</h3>
+
+<div class="highlight">
+<pre>#include the js and css files
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"</span> <span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/js/dropPin/dropPin.css"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"/js/dropPin/dropPin.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+#get the data for the pins(maybe from a database?)
+<span class="cp">&lt;?php</span>
+<span class="cp">    $mapItems = array(</span>
+<span class="cp">    array(</span>
+<span class="cp">        "id" =&gt; 1,</span>
+<span class="cp">        "title" =&gt; "map pin 1",</span>
+<span class="cp">        "xcoord" =&gt; "420",</span>
+<span class="cp">        "ycoord" =&gt; "120"</span>
+<span class="cp">        ),</span>
+<span class="cp">    array(</span>
+<span class="cp">        "id" =&gt; 2,</span>
+<span class="cp">        "title" =&gt; "map pin 2",</span>
+<span class="cp">        "xcoord" =&gt; "429",</span>
+<span class="cp">        "ycoord" =&gt; "129"</span>
+<span class="cp">        )</span>
+<span class="cp">    );</span>
+<span class="cp">?&gt;</span>
+#set up an array of pin data for plugin use
+<span class="cp">&lt;?php</span>
+<span class="cp">    foreach($mapItems as $map)</span>
+<span class="cp">    {</span>
+<span class="cp">        $mapPins[] = array(</span>
+<span class="cp">            "id" =&gt; $map['id'],</span>
+<span class="cp">            "title" =&gt; $map['title'],                   </span>
+<span class="cp">            "xcoord" =&gt; $map['xcoord'],</span>
+<span class="cp">            "ycoord" =&gt; $map['ycoord']</span>
+<span class="cp">        );</span>
+<span class="cp">    }</span>
+<span class="cp">?&gt;</span>
+
+#add the script on document ready and pass through the pin dataset
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'#map'</span><span class="p">).</span><span class="nx">dropPin</span><span class="p">(</span><span class="s1">'showPins'</span><span class="p">,{</span>
+        <span class="nx">fixedHeight</span><span class="o">:</span><span class="mi">495</span><span class="p">,</span>
+        <span class="nx">fixedWidth</span><span class="o">:</span><span class="mi">700</span><span class="p">,</span>
+        <span class="nx">cursor</span><span class="o">:</span> <span class="s1">'pointer'</span><span class="p">,</span>
+        <span class="nx">pinclass</span><span class="o">:</span> <span class="s1">'qtipinfo'</span><span class="p">,</span>
+        <span class="nx">pinDataSet</span><span class="o">:</span> <span class="o">&lt;?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="s1">'{"markers": '</span><span class="p">.</span><span class="nx">json_encode</span><span class="p">(</span><span class="nx">$mapPins</span><span class="p">).</span><span class="s1">'}'</span> <span class="p">;</span><span class="o">?&gt;</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nt">&lt;/script&gt;</span>
+
+#add the html div to insert the image map
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"map"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre>
+</div>
+
+
+<h3>Options</h3>
+
+<div class="highlight">
+<pre><span class="nx">fixedHeight</span><span class="o">:</span> <span class="mi">500</span><span class="p">,</span>
+<span class="nx">fixedWidth</span><span class="o">:</span> <span class="mi">500</span><span class="p">,</span>
+<span class="nx">dropPinPath</span><span class="o">:</span> <span class="s1">'/js/dropPin/'</span><span class="p">,</span>
+<span class="nx">pin</span><span class="o">:</span> <span class="s1">'/js/dropPin/defaultpin.png'</span><span class="p">,</span>
+<span class="nx">backgroundImage</span><span class="o">:</span> <span class="s1">''</span><span class="p">,</span>
+<span class="nx">backgroundColor</span><span class="o">:</span> <span class="s1">'#9999CC'</span><span class="p">,</span>
+<span class="nx">xoffset</span> <span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+<span class="nx">yoffset</span> <span class="o">:</span> <span class="mi">30</span><span class="p">,</span> <span class="c1">//need to change this to work out icon heigh/width then subtract margin from it</span>
+<span class="nx">cursor</span><span class="o">:</span> <span class="s1">'crosshair'</span><span class="p">,</span>
+<span class="nx">pinclass</span><span class="o">:</span> <span class="s1">''</span><span class="p">,</span>
+<span class="nx">userevent</span><span class="o">:</span> <span class="s1">'click'</span><span class="p">,</span>
+<span class="nx">hiddenXid</span><span class="o">:</span> <span class="s1">'#xcoord'</span><span class="p">,</span> <span class="c1">//used for saving to db via hidden form field</span>
+<span class="nx">hiddenYid</span><span class="o">:</span> <span class="s1">'#ycoord'</span><span class="p">,</span> <span class="c1">//used for saving to db via hidden form field</span>
+<span class="nx">pinX</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">//set to value if you pass pin co-ords to overirde click binding to position</span>
+<span class="nx">pinY</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">//set to value if you pass pin co-ords to overirde click binding to position</span>
+<span class="nx">pinDataSet</span><span class="o">:</span> <span class="s1">''</span> <span class="c1">//array of pin coordinates for front end render</span>
+</pre>
+</div>
+
+
+<h3>Author</h3>
+
+<pre><code>Duncan Heron
+</code></pre>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-33092916-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
