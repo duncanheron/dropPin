@@ -1,5 +1,8 @@
 ### dropPin
 A quick and simple tool to drop markers onto static images avoiding the use of annoying area maps.
+Store pin co-ordinates and draw them back onto the image with css and jQuery.
+Allow users to mark where they live on a map without using Google maps(or similar).
+However you choose to use it, have fun....
 
 ### HTML
 ```html
