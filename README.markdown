@@ -3,6 +3,7 @@ A quick and simple tool to drop markers onto static images avoiding the use of a
 Store pin co-ordinates and draw them back onto the image with css and jQuery.
 Allow users to mark where they live on a map without using Google maps(or similar).
 However you choose to use it, have fun....
+View on Github pages: http://duncanheron.github.com/dropPin/
 
 ### HTML
 ```html
