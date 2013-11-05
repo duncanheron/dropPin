@@ -34,23 +34,24 @@
 			var options =  $.extend(defaults, options);
 
 			this.css({'cursor' : options.cursor, 'background-color' : options.backgroundColor , 'background-image' : "url('"+options.backgroundImage+"')",'height' : options.fixedHeight , 'width' : options.fixedWidth});
-
+			var i = 10;
 			this.on(options.userevent, function (ev) {
 
+				$('.pin').remove();
+
+				i = i + 10;
 				var $img = $(ev.target);
 				var offset = $img.offset();
 				var x = ev.pageX - offset.left;
 				var y = ev.pageY - offset.top;
-
-
-				$('.pin').remove();
 
 				var xval = (x - options.xoffset);
 				var yval = (y - options.yoffset);
 				var imgC = $('<img class="pin">');
 				imgC.css('top', yval);
 				imgC.css('left', xval);
-
+				imgC.css('z-index', i);
+				
 				imgC.attr('src',  options.pin);
 
 				imgC.appendTo(this);
@@ -72,22 +73,21 @@
 			var options =  $.extend(defaults, options);
 
 			this.css({'cursor' : options.cursor, 'background-color' : options.backgroundColor , 'background-image' : "url('"+options.backgroundImage+"')",'height' : options.fixedHeight , 'width' : options.fixedWidth});
-
+			var i = 10;
 			this.on(options.userevent, function (ev) {
 
+				i = i + 10;
 				var $img = $(ev.target);
 				var offset = $img.offset();
 				var x = ev.pageX - offset.left;
 				var y = ev.pageY - offset.top;
-
-
-				// $('.pin').remove();
 
 				var xval = (x - options.xoffset);
 				var yval = (y - options.yoffset);
 				var imgC = $('<img class="pin">');
 				imgC.css('top', yval);
 				imgC.css('left', xval);
+				imgC.css('z-index', i);
 
 				imgC.attr('src',  options.pin);
 
