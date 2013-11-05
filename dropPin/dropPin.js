@@ -49,8 +49,8 @@
 				var xval = (x - options.xoffset);
 				var yval = (y - options.yoffset);
 				var imgC = $('<img class="pin">');
-				imgC.css('top', yval);
-				imgC.css('left', xval);
+				imgC.css('top', yval+'px');
+				imgC.css('left', xval+'px');
 				imgC.css('z-index', i);
 				
 				imgC.attr('src',  options.pin);
@@ -87,8 +87,8 @@
 				var xval = (x - options.xoffset);
 				var yval = (y - options.yoffset);
 				var imgC = $('<img class="pin">');
-				imgC.css('top', yval);
-				imgC.css('left', xval);
+				imgC.css('top', yval+'px');
+				imgC.css('left', xval+'px');
 				imgC.css('z-index', i);
 
 				imgC.attr('src',  options.pin);
@@ -117,8 +117,8 @@
 			var xval = (options.pinX);
 			var yval = (options.pinY);
 			var imgC = $('<img class="pin">');
-			imgC.css('top', yval);
-			imgC.css('left', xval);
+			imgC.css('top', yval+'px');
+			imgC.css('left', xval+'px');
 
 			imgC.attr('src',  options.pin);
 
