@@ -32,15 +32,16 @@
 		init: function(options) {
 
 			var options =  $.extend(defaults, options);
+			var thisObj = this;
 
 			this.css({'cursor' : options.cursor, 'background-color' : options.backgroundColor , 'background-image' : "url('"+options.backgroundImage+"')",'height' : options.fixedHeight , 'width' : options.fixedWidth});
 			var i = 10;
-			this.on(options.userevent, function (ev) {
+			thisObj.on(options.userevent, function (ev) {
 
 				$('.pin').remove();
 
 				i = i + 10;
-				var $img = $(ev.target);
+				var $img = $(thisObj);
 				var offset = $img.offset();
 				var x = ev.pageX - offset.left;
 				var y = ev.pageY - offset.top;
@@ -54,7 +55,7 @@
 				
 				imgC.attr('src',  options.pin);
 
-				imgC.appendTo(this);
+				imgC.appendTo(thisObj);
 				$(options.hiddenXid).val(xval);
 				$(options.hiddenYid).val(yval);
 
@@ -63,7 +64,7 @@
 		        hiddenCtl.css('top', y);
 		        hiddenCtl.css('left', x);
 		        hiddenCtl.val(x + "#" + y);
-		        hiddenCtl.appendTo(this);
+		        hiddenCtl.appendTo(thisObj);
 
 			});
 
@@ -71,13 +72,14 @@
 		dropMulti: function(options) {
 
 			var options =  $.extend(defaults, options);
+			var thisObj = this;
 
-			this.css({'cursor' : options.cursor, 'background-color' : options.backgroundColor , 'background-image' : "url('"+options.backgroundImage+"')",'height' : options.fixedHeight , 'width' : options.fixedWidth});
+			thisObj.css({'cursor' : options.cursor, 'background-color' : options.backgroundColor , 'background-image' : "url('"+options.backgroundImage+"')",'height' : options.fixedHeight , 'width' : options.fixedWidth});
 			var i = 10;
-			this.on(options.userevent, function (ev) {
+			thisObj.on(options.userevent, function (ev) {
 
 				i = i + 10;
-				var $img = $(ev.target);
+				var $img = $(thisObj);
 				var offset = $img.offset();
 				var x = ev.pageX - offset.left;
 				var y = ev.pageY - offset.top;
@@ -91,7 +93,8 @@
 
 				imgC.attr('src',  options.pin);
 
-				imgC.appendTo(this);
+				imgC.appendTo(thisObj);
+				// console.log(ev.target);
 				$(options.hiddenXid).val(xval);
 				$(options.hiddenYid).val(yval);
 
@@ -100,7 +103,7 @@
 		        hiddenCtl.css('top', y);
 		        hiddenCtl.css('left', x);
 		        hiddenCtl.val(x + "#" + y);
-		        hiddenCtl.appendTo(this);
+		        hiddenCtl.appendTo(thisObj);
 
 			});
 
