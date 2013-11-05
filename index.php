@@ -31,5 +31,5 @@
 
 	});
 	</script>
-	<p><a href="map.php">Try dropping a pin on a map</a></p>
+	<p><a href="map.php">Try dropping a pin on a map</a> <a href="multi.php">Try dropping multiple pins on a map</a></p>
 	<div id="map2"></div>

@@ -40,9 +40,34 @@ $('#map').dropPin({
 
 #add the html div to insert the image map
 <div id="map"></div>
+```
+
+### Example 2 - click to add multiple pins
+```html
+#include the js and css files
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script>
+<link rel="stylesheet" href="/js/dropPin/dropPin.css" type="text/css" />
+<script type="text/javascript" src="/js/dropPin/dropPin.js"></script>
+
+#add the script on document ready
+<script type="text/javascript">
+    $(document).ready(function() {
+    
+    $('#map').dropPin('dropMulti',{
+        fixedHeight:495,
+        fixedWidth:700,
+        backgroundImage: '/images/{some-image.jpg}',
+        pin: '/image/{custom-pin-graphic.png}'
+    });
+});
+  
+</script>
+
+#add the html div to insert the image map
+<div id="map"></div>
 ```  
 
-### Example 2 - show a single stored pin
+### Example 3 - show a single stored pin
 ```html
 #include the js and css files
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script>
@@ -69,7 +94,7 @@ $(document).ready(function() {
 <div id="map"></div>
 ```
 
-### Example 3 - show multiple pins from dataset
+### Example 4 - show multiple pins from dataset
 ```html
 #include the js and css files
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script>

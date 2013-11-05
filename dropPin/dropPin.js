@@ -57,6 +57,51 @@
 				$(options.hiddenXid).val(xval);
 				$(options.hiddenYid).val(yval);
 
+				// add hidden fields - can use these to save to database
+				var hiddenCtl= $('<input type="hidden" name="hiddenpin" class="pin">');
+		        hiddenCtl.css('top', y);
+		        hiddenCtl.css('left', x);
+		        hiddenCtl.val(x + "#" + y);
+		        hiddenCtl.appendTo(this);
+
+			});
+
+		},
+		dropMulti: function(options) {
+
+			var options =  $.extend(defaults, options);
+
+			this.css({'cursor' : options.cursor, 'background-color' : options.backgroundColor , 'background-image' : "url('"+options.backgroundImage+"')",'height' : options.fixedHeight , 'width' : options.fixedWidth});
+
+			this.on(options.userevent, function (ev) {
+
+				var $img = $(ev.target);
+				var offset = $img.offset();
+				var x = ev.pageX - offset.left;
+				var y = ev.pageY - offset.top;
+
+
+				// $('.pin').remove();
+
+				var xval = (x - options.xoffset);
+				var yval = (y - options.yoffset);
+				var imgC = $('<img class="pin">');
+				imgC.css('top', yval);
+				imgC.css('left', xval);
+
+				imgC.attr('src',  options.pin);
+
+				imgC.appendTo(this);
+				$(options.hiddenXid).val(xval);
+				$(options.hiddenYid).val(yval);
+
+				// add hidden fields - can use these to save to database
+				var hiddenCtl= $('<input type="hidden" name="hiddenpin" class="pin">');
+		        hiddenCtl.css('top', y);
+		        hiddenCtl.css('left', x);
+		        hiddenCtl.val(x + "#" + y);
+		        hiddenCtl.appendTo(this);
+
 			});
 
 		},
