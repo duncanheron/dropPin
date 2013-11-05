@@ -16,5 +16,5 @@
 
 	});
 	</script>
-	<p><a href="index.php">Show stored pins on a map</a></p>
+	<p><a href="index.php">Show stored pins on a map</a> | <a href="multi.php">Try dropping multiple pins on a map</a></p>
 	<div id="map"></div><br />
