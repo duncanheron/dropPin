@@ -3,9 +3,11 @@
 }
 #map img#mapclick,#map2 img#mapclick{
 	position: absolute;	
-	z-index:5555;	
+	z-index: 5555;	
 }
 .pin {
-	position: absolute;	
-	z-index:2;
+	height: auto;
+	position: absolute;
+	width: 24px;
+	z-index: 2;	
 }

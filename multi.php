@@ -1,7 +1,7 @@
 <?php
 
 	?>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" ></script></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<link rel="stylesheet" href="dropPin/dropPin.css" type="text/css" />
 	<script type="text/javascript" src="dropPin/dropPin.js"></script>
 	<script type="text/javascript">

@@ -11,7 +11,7 @@
 		fixedHeight: 500,
 		fixedWidth: 500,
 		dropPinPath: '/js/dropPin/',
-		pin: 'dropPin/defaultpin.png',
+		pin: 'dropPin/defaultpin@2x.png',
 		backgroundImage: 'dropPin/access-map.png',
 		backgroundColor: '#9999CC',
 		xoffset : 10,
