@@ -38,7 +38,7 @@
 			var i = 10;
 			thisObj.on(options.userevent, function (ev) {
 
-				$('.pin').remove();
+				$('.'+options.pinclass).remove();
 
 				i = i + 10;
 				var $img = $(thisObj);
@@ -48,7 +48,7 @@
 
 				var xval = (x - options.xoffset);
 				var yval = (y - options.yoffset);
-				var imgC = $('<img class="pin">');
+				var imgC = $('<img class="pin '+options.pinclass+'">');
 				imgC.css('top', yval+'px');
 				imgC.css('left', xval+'px');
 				imgC.css('z-index', i);
