@@ -60,7 +60,7 @@
 				$(options.hiddenYid).val(yval);
 
 				// add hidden fields - can use these to save to database
-				var hiddenCtl= $('<input type="hidden" name="hiddenpin" class="pin">');
+				var hiddenCtl= $('<input type="hidden" name="hiddenpin" class="pin '+options.pinclass+'">');
 		        hiddenCtl.css('top', y);
 		        hiddenCtl.css('left', x);
 		        hiddenCtl.val(x + "#" + y);
